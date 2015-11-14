@@ -56,6 +56,7 @@ class IronCore
     public $debug_enabled = false;
     public $ssl_verifypeer = true;
     public $connection_timeout = 60;
+    public $timeout = 60;
     public $proxy = null;
     public $proxy_userpwd = null;
 
@@ -324,6 +325,7 @@ class IronCore
             curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($this->curl, CURLOPT_HTTPHEADER, $this->compiledCurlHeaders());
             curl_setopt($this->curl, CURLOPT_CONNECTTIMEOUT, $this->connection_timeout);
+            curl_setopt($this->curl, CURLOPT_TIMEOUT, $this->timeout);
         }
         else
         {
