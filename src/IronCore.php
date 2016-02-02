@@ -291,9 +291,9 @@ class IronCore
                     curl_setopt($this->curl, CURLOPT_POST, true);
                     // php 5.6+ requires this for @file style uploads
                     // if (defined('CURLOPT_SAFE_UPLOAD'))
-                    // {
-                    //     curl_setopt($this->curl, CURLOPT_SAFE_UPLOAD, false);
-                    // }
+                    {
+                        curl_setopt($this->curl, CURLOPT_SAFE_UPLOAD, false);
+                    }
                     if ($data)
                     {
                         curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data);
